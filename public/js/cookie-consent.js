@@ -1,10 +1,13 @@
 /**
  * cookie-consent.js
  * ------------------
- * Vanilla JS Cookie Consent Manager
- * No frameworks. No libraries. Just the browser APIs.
+ * This file implements a cookie consent banner with the following features:
+ * 1. Shows a banner to first-time visitors asking for cookie consent.
+ * 2. If the user accepts, we set a cookie and load any media (ads/videos) that require consent.
+ * 3. If the user declines, we set a cookie and do NOT load the media.
+ * 4. On subsequent visits, we check the cookie and either show the banner or load content silently.
  *
- * CONCEPTS YOU'LL LEARN HERE:
+ * CONCEPTS LEARNED:
  *  - document.cookie (reading & writing cookies)
  *  - DOM manipulation (querySelector, classList, createElement)
  *  - Event listeners
@@ -48,7 +51,7 @@ function getCookie(name) {
         }
     }
 
-    return null; // not found
+    return null;
 }
 
 
