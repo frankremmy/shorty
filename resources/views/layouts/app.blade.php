@@ -38,7 +38,7 @@
     {{-- ── NAVIGATION ── --}}
     <nav class="nav">
         <div class="container nav__inner">
-            <a href="{{ url('/') }}" class="nav__logo">short<span>://</span>y</a>
+            <a href="{{ url('/') }}" class="nav__logo">shorty</a>
             <span style="font-size:0.78rem; color:var(--muted);">Link smarter.</span>
         </div>
     </nav>
@@ -57,7 +57,7 @@
         </div>
     </footer>
 
-    {{-- ── COOKIE BANNER (always present in DOM, JS controls visibility) ── --}}
+    {{-- ── COOKIE BANNER ── --}}
     {{--
         WHY HERE (end of body)?
         Putting it before </body> means the DOM is ready by the time

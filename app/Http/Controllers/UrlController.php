@@ -19,7 +19,7 @@ class UrlController
     /**
      * index()
      * Handles GET /
-     * Just shows the home page view.
+     * Just shows the homepage view.
      */
     public function index()
     {
@@ -30,10 +30,7 @@ class UrlController
      * shorten()
      * Handles POST /shorten
      * Validates the URL, generates a short code, stores it, redirects back.
-     *
-     * NOTE: In a real app you'd use a database (Eloquent model).
-     * Here we use the session as a lightweight stand-in so the project
-     * runs without any DB setup — good for demos.
+     * In production, you'd store the code-URL mapping in a database instead of session.
      */
     public function shorten(Request $request)
     {

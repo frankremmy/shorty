@@ -1,15 +1,3 @@
-{{--
-    resources/views/layouts/app.blade.php
-    ----------------------------------------
-    The master layout. Every page @extends this file.
-
-    LARAVEL LAYOUT FLOW:
-    1. A view like home.blade.php calls @extends('layouts.app')
-    2. It defines @section('content') ... @endsection
-    3. Here, @yield('content') is replaced by that section at render time.
-    4. Everything else (nav, footer, scripts) is shared automatically.
---}}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +7,7 @@
     {{-- @yield lets child views inject their own <title> --}}
     <title>@yield('title', 'Shorty — URL Shortener')</title>
 
-    {{-- CSRF meta tag — Laravel needs this for AJAX form submissions --}}
+    {{-- CSRF meta tag --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     {{-- Google Fonts --}}
@@ -38,12 +26,12 @@
     {{-- ── NAVIGATION ── --}}
     <nav class="nav">
         <div class="container nav__inner">
-            <a href="{{ url('/') }}" class="nav__logo">short<span>://</span>y</a>
+            <a href="{{ url('/') }}" class="nav__logo">Shorty</a>
             <span style="font-size:0.78rem; color:var(--muted);">Link smarter.</span>
         </div>
     </nav>
 
-    {{-- ── PAGE CONTENT (injected by child view) ── --}}
+    {{-- ── PAGE CONTENT ── --}}
     <main>
         @yield('content')
     </main>
@@ -57,7 +45,7 @@
         </div>
     </footer>
 
-    {{-- ── COOKIE BANNER (always present in DOM, JS controls visibility) ── --}}
+    {{-- ── COOKIE BANNER ── --}}
     {{--
         WHY HERE (end of body)?
         Putting it before </body> means the DOM is ready by the time
